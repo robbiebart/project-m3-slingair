@@ -93,6 +93,8 @@ const handleConfirmSeat = (event) => {
       givenName: document.getElementById("givenName").value,
       surname: document.getElementById("surname").value,
       email: document.getElementById("email").value,
+      flight: flightInput.value,
+      seat: selection,
     }),
     headers: {
       Accept: "application/json",
@@ -103,7 +105,7 @@ const handleConfirmSeat = (event) => {
     .then((data) => {
       let parsed = JSON.parse(data);
       if (parsed.status === 200) {
-        window.location.href = "http://localhost8000/confirmed";
+        window.location.href = "http://localhost:8000/confirmed";
       }
     });
 };
